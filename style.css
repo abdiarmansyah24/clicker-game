@@ -1,0 +1,897 @@
+/* ===================================================================
+   CLICKER GAME - STYLESHEET (FULLY HARMONIZED DESIGN & SIZES)
+   Theme: Navy Blue (#0b2545), Gold Accent (#d4af37), Ice Blue (#ebf3fa)
+   =================================================================== */
+
+/* 1. CSS VARIABLES & RESET */
+:root {
+    --bg-page: #f5f8fa;
+    --card-bg: #ffffff;
+    --navy-dark: #0b2545;
+    --navy-gradient: linear-gradient(180deg, #123359 0%, #0b2545 100%);
+    --gold-accent: #c59b27;
+    --gold-bright: #d4af37;
+    --gold-light: #fffbeb;
+    --gold-border: #fde68a;
+    --ice-blue: #ebf3fa;
+    --ice-blue-border: #d0e1f2;
+    --text-navy: #0b2545;
+    --text-muted: #5a6b7c;
+    --shadow-card: 0 20px 45px -12px rgba(11, 37, 69, 0.14), 0 4px 12px rgba(11, 37, 69, 0.05);
+    --shadow-btn: 0 8px 22px rgba(11, 37, 69, 0.28);
+    --font-main: 'Poppins', system-ui, -apple-system, sans-serif;
+    --radius-xl: 32px;
+    --radius-lg: 18px;
+    --radius-md: 12px;
+    --radius-full: 9999px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100dvh;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-page);
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(208, 225, 242, 0.45) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(11, 37, 69, 0.08) 0px, transparent 50%);
+    color: var(--text-navy);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 14px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Main Container Wrapper */
+.main-wrapper {
+    width: 100%;
+    max-width: 450px;
+    position: relative;
+    z-index: 1;
+    margin: auto;
+}
+
+/* App Card Container - Standardized Height Across All Screens */
+.app-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(208, 225, 242, 0.8);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-card);
+    padding: 30px 28px 34px 28px;
+    min-height: 590px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Plant Leaves Motif inside Card Corners */
+.card-leaf {
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.2;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.leaf-bottom-left {
+    bottom: -15px;
+    left: -15px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M10 90 C30 50, 60 40, 90 10 C70 40, 40 70, 10 90 Z' fill='%3C%23c59b27'/%3E%3Cpath d='M20 80 C40 60, 60 50, 80 30' stroke='%3C%230b2545' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+}
+
+.leaf-bottom-right {
+    bottom: -15px;
+    right: -15px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M90 90 C70 50, 40 40, 10 10 C30 40, 60 70, 90 90 Z' fill='%3C%230b2545'/%3E%3Cpath d='M80 80 C60 60, 40 50, 20 30' stroke='%3C%23c59b27' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+}
+
+/* App Header & Top Buttons */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.header-placeholder {
+    width: 70px;
+}
+
+.logo-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.brand-logo {
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 10px rgba(11, 37, 69, 0.15));
+    transition: transform 0.25s ease;
+}
+
+.brand-logo:hover {
+    transform: scale(1.05);
+}
+
+.top-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-circle-action {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 1px solid var(--ice-blue-border);
+    box-shadow: 0 2px 6px rgba(11, 37, 69, 0.08);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-circle-action:hover {
+    transform: translateY(-2px);
+    background: var(--ice-blue);
+    border-color: var(--navy-dark);
+}
+
+/* Title Section */
+.title-header-section {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.main-game-title {
+    font-size: 2.3rem;
+    font-weight: 800;
+    color: var(--navy-dark);
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+}
+
+.gold-text {
+    color: var(--gold-accent);
+}
+
+.main-game-subtitle {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+    font-weight: 500;
+}
+
+/* View Sections - Uniform Flex Fill */
+.screen-view {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 18px;
+    position: relative;
+    z-index: 2;
+    animation: fadeInView 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeInView {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* ===================================================================
+   SCREEN 1: HALAMAN UTAMA (Duration & Start)
+   =================================================================== */
+.section-subheading {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--navy-dark);
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.duration-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.dur-card {
+    background: var(--ice-blue);
+    border: 1px solid var(--ice-blue-border);
+    border-radius: var(--radius-lg);
+    padding: 18px 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    outline: none;
+}
+
+.dur-card .dur-val {
+    font-size: 1.65rem;
+    font-weight: 800;
+    color: var(--navy-dark);
+    line-height: 1;
+}
+
+.dur-card .dur-lbl {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-top: 5px;
+}
+
+.dur-card:hover:not(.active) {
+    border-color: var(--navy-dark);
+    background: #e1ebf5;
+    transform: translateY(-2px);
+}
+
+/* Active Duration Card: Dark Navy + Gold Border Highlight! */
+.dur-card.active {
+    background: var(--navy-dark);
+    border: 2px solid var(--gold-bright);
+    box-shadow: 0 6px 18px rgba(11, 37, 69, 0.3);
+}
+
+.dur-card.active .dur-val,
+.dur-card.active .dur-lbl {
+    color: #ffffff;
+}
+
+/* Standardized Navy Pill Button */
+.btn-navy-pill {
+    width: 100%;
+    height: 54px;
+    background: var(--navy-gradient);
+    color: #ffffff;
+    border: none;
+    border-radius: var(--radius-full);
+    font-family: inherit;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: var(--shadow-btn);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.2s ease;
+}
+
+.btn-navy-pill:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(11, 37, 69, 0.35);
+}
+
+.btn-navy-pill:active {
+    transform: translateY(0);
+}
+
+.play-triangle {
+    font-size: 0.85rem;
+}
+
+/* Bottom Feature Badges Cards */
+.feature-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.feature-card {
+    background: var(--ice-blue);
+    border: 1px solid var(--ice-blue-border);
+    border-radius: var(--radius-md);
+    padding: 14px 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.feature-icon {
+    font-size: 1.3rem;
+    margin-bottom: 4px;
+}
+
+.feature-label {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    line-height: 1.2;
+}
+
+.feature-label strong {
+    color: var(--navy-dark);
+    display: block;
+}
+
+/* ===================================================================
+   SCREEN 2: COUNTDOWN SCREEN
+   =================================================================== */
+.countdown-inner-card {
+    background: var(--ice-blue);
+    border: 1px solid var(--ice-blue-border);
+    border-radius: var(--radius-lg);
+    padding: 36px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex: 1;
+}
+
+.countdown-card-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--navy-dark);
+}
+
+.countdown-ring-container {
+    width: 145px;
+    height: 145px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    border: 5px solid rgba(208, 225, 242, 0.85);
+    box-shadow: 0 0 24px rgba(11, 37, 69, 0.08);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.countdown-ring-inner {
+    width: 115px;
+    height: 115px;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: inset 0 2px 6px rgba(0,0,0,0.06);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.countdown-big-digit {
+    font-size: 3.8rem;
+    font-weight: 800;
+    color: var(--navy-dark);
+    animation: popDigit 0.75s ease-out infinite;
+}
+
+@keyframes popDigit {
+    0% { transform: scale(0.6); opacity: 0.5; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.countdown-card-footer {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+/* ===================================================================
+   SCREEN 3: SAAT BERMAIN (GAMEPLAY)
+   =================================================================== */
+.gameplay-stats-card {
+    background: var(--ice-blue);
+    border: 1px solid var(--ice-blue-border);
+    border-radius: var(--radius-lg);
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.gameplay-stat-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.stat-circle-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--navy-dark);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.stat-text-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-lbl-small {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.stat-val-bold {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--navy-dark);
+}
+
+.stat-divider {
+    width: 1px;
+    height: 32px;
+    background: #cbd5e1;
+}
+
+/* Central Click Button & Sunburst Ticks */
+.center-click-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    flex: 1;
+}
+
+.sunburst-rays {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    pointer-events: none;
+}
+
+.ray {
+    position: absolute;
+    width: 4px;
+    height: 14px;
+    background: var(--gold-accent);
+    border-radius: 2px;
+    opacity: 0.75;
+    top: 50%;
+    left: 50%;
+}
+
+.ray-1 { transform: translate(-50%, -50%) rotate(0deg) translateY(-115px); }
+.ray-2 { transform: translate(-50%, -50%) rotate(45deg) translateY(-115px); }
+.ray-3 { transform: translate(-50%, -50%) rotate(90deg) translateY(-115px); }
+.ray-4 { transform: translate(-50%, -50%) rotate(135deg) translateY(-115px); }
+.ray-5 { transform: translate(-50%, -50%) rotate(180deg) translateY(-115px); }
+.ray-6 { transform: translate(-50%, -50%) rotate(225deg) translateY(-115px); }
+.ray-7 { transform: translate(-50%, -50%) rotate(270deg) translateY(-115px); }
+.ray-8 { transform: translate(-50%, -50%) rotate(315deg) translateY(-115px); }
+
+.btn-click-me-circle {
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #174270 0%, #0b2545 80%);
+    border: 7px solid #ffffff;
+    box-shadow: 
+        0 14px 34px rgba(11, 37, 69, 0.45),
+        0 0 0 2px rgba(11, 37, 69, 0.15);
+    color: #ffffff;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.08s ease, box-shadow 0.1s ease;
+    user-select: none;
+    touch-action: manipulation;
+    position: relative;
+    z-index: 2;
+}
+
+.btn-click-me-circle:active,
+.btn-click-me-circle.clicked {
+    transform: scale(0.92) !important;
+    box-shadow: 0 4px 12px rgba(11, 37, 69, 0.2) !important;
+}
+
+.click-btn-label {
+    font-size: 1.75rem;
+    font-weight: 800;
+    line-height: 1.1;
+    text-align: center;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Floating +1 Teks Animation */
+.floating-plus {
+    position: fixed;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--gold-bright);
+    pointer-events: none;
+    animation: floatUp 0.6s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+    z-index: 99;
+    text-shadow: 0 2px 6px rgba(255, 255, 255, 0.9);
+}
+
+@keyframes floatUp {
+    0% { opacity: 1; transform: translate(-50%, 0) scale(0.8); }
+    50% { transform: translate(-50%, -35px) scale(1.3); }
+    100% { opacity: 0; transform: translate(-50%, -60px) scale(1); }
+}
+
+.motivation-pill {
+    background: var(--ice-blue);
+    border: 1px solid var(--ice-blue-border);
+    border-radius: var(--radius-full);
+    padding: 12px 16px;
+    text-align: center;
+}
+
+.motivation-text {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--navy-dark);
+}
+
+/* ===================================================================
+   SCREEN 4: HASIL AKHIR (RESULT)
+   =================================================================== */
+.result-title-main {
+    font-size: 2.1rem;
+    font-weight: 800;
+    color: var(--navy-dark);
+    text-align: center;
+}
+
+.result-subtitle-main {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: -12px;
+}
+
+.result-summary-card {
+    background: var(--ice-blue);
+    border: 1px solid var(--ice-blue-border);
+    border-radius: var(--radius-lg);
+    padding: 16px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.res-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.res-col-title {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    line-height: 1.2;
+}
+
+.res-col-val {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--navy-dark);
+    margin-top: 4px;
+}
+
+.res-col-val small {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.res-col-divider {
+    width: 1px;
+    height: 38px;
+    background: #cbd5e1;
+}
+
+.high-score-banner-gold {
+    background: var(--gold-light);
+    border: 1px solid var(--gold-border);
+    border-radius: var(--radius-lg);
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.hs-banner-icon {
+    font-size: 1.8rem;
+}
+
+.hs-banner-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.hs-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #92400e;
+}
+
+.hs-val {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--navy-dark);
+}
+
+.result-actions-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    z-index: 10;
+}
+
+.btn-light-pill {
+    width: 100%;
+    height: 50px;
+    background: var(--ice-blue);
+    color: var(--navy-dark);
+    border: 1px solid var(--ice-blue-border);
+    border-radius: var(--radius-full);
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+.btn-light-pill:hover {
+    background: #e1ebf5;
+    color: #ef4444;
+    border-color: #fca5a5;
+}
+
+.refresh-icon, .trash-icon {
+    font-size: 1rem;
+}
+
+/* Confetti overlay */
+.confetti-container {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.confetti-piece {
+    position: absolute;
+    width: 8px;
+    height: 12px;
+    top: -20px;
+    opacity: 0.85;
+    animation: confettiFall 2.5s ease-out forwards;
+}
+
+@keyframes confettiFall {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(400px) rotate(720deg); opacity: 0; }
+}
+
+/* ===================================================================
+   CUSTOM MODAL DIALOG (High Score Record Display)
+   =================================================================== */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(11, 37, 69, 0.45);
+    backdrop-filter: blur(6px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 100;
+    animation: fadeInModal 0.25s ease-out;
+}
+
+@keyframes fadeInModal {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-card {
+    background: #ffffff;
+    width: 100%;
+    max-width: 380px;
+    border-radius: 28px;
+    padding: 28px 24px;
+    box-shadow: 0 25px 50px -12px rgba(11, 37, 69, 0.3);
+    border: 1px solid rgba(208, 225, 242, 0.8);
+    text-align: center;
+    position: relative;
+    animation: popModalCard 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@keyframes popModalCard {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.modal-trophy-badge {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--gold-light);
+    border: 2px solid var(--gold-border);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 12px rgba(197, 155, 39, 0.2);
+}
+
+.modal-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--navy-dark);
+}
+
+.modal-subtitle {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+    margin-bottom: 18px;
+}
+
+.hs-modal-grid {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.hs-modal-item {
+    background: var(--ice-blue);
+    border: 1px solid var(--ice-blue-border);
+    border-radius: var(--radius-lg);
+    padding: 14px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hs-modal-dur {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--navy-dark);
+}
+
+.hs-modal-val {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--gold-accent);
+}
+
+.modal-actions-col {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* ===================================================================
+   SMARTPHONE RESPONSIVE BREAKPOINTS (iOS & Android)
+   =================================================================== */
+@media (max-width: 480px) {
+    body {
+        padding: 12px 10px;
+    }
+
+    .main-wrapper {
+        max-width: 100%;
+    }
+
+    .app-card {
+        padding: 24px 20px 28px 20px;
+        border-radius: 26px;
+        min-height: 550px;
+    }
+
+    .brand-logo {
+        width: 64px;
+        height: 64px;
+    }
+
+    .main-game-title {
+        font-size: 1.95rem;
+    }
+
+    .main-game-subtitle {
+        font-size: 0.8rem;
+    }
+
+    .btn-click-me-circle {
+        width: 165px;
+        height: 165px;
+    }
+
+    .click-btn-label {
+        font-size: 1.5rem;
+    }
+
+    .sunburst-rays {
+        width: 205px;
+        height: 205px;
+    }
+
+    .ray-1 { transform: translate(-50%, -50%) rotate(0deg) translateY(-98px); }
+    .ray-2 { transform: translate(-50%, -50%) rotate(45deg) translateY(-98px); }
+    .ray-3 { transform: translate(-50%, -50%) rotate(90deg) translateY(-98px); }
+    .ray-4 { transform: translate(-50%, -50%) rotate(135deg) translateY(-98px); }
+    .ray-5 { transform: translate(-50%, -50%) rotate(180deg) translateY(-98px); }
+    .ray-6 { transform: translate(-50%, -50%) rotate(225deg) translateY(-98px); }
+    .ray-7 { transform: translate(-50%, -50%) rotate(270deg) translateY(-98px); }
+    .ray-8 { transform: translate(-50%, -50%) rotate(315deg) translateY(-98px); }
+}
+
+/* Ultra Small Screens (e.g., iPhone SE, Galaxy A01 - 360px width) */
+@media (max-width: 360px) {
+    .app-card {
+        padding: 20px 14px 22px 14px;
+        min-height: 520px;
+    }
+
+    .dur-card .dur-val {
+        font-size: 1.35rem;
+    }
+
+    .dur-card .dur-lbl {
+        font-size: 0.7rem;
+    }
+
+    .btn-click-me-circle {
+        width: 145px;
+        height: 145px;
+    }
+
+    .click-btn-label {
+        font-size: 1.35rem;
+    }
+}

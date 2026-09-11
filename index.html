@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Clicker Game - Uji Kecepatan Klik Kamu!</title>
+    <meta name="description" content="Clicker Game modern dan responsif untuk menguji seberapa cepat jari kamu melakukan klik dalam waktu 10, 15, atau 30 detik.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-wrapper">
+        <div class="app-card">
+            <!-- Leaf Floral Ornaments inside Card -->
+            <div class="card-leaf leaf-bottom-left"></div>
+            <div class="card-leaf leaf-bottom-right"></div>
+
+            <!-- Top App Header & Logo -->
+            <header class="app-header">
+                <div class="header-placeholder"></div>
+                <div class="logo-wrapper">
+                    <img src="assets/logo.png" alt="Clicker Game Logo" class="brand-logo">
+                </div>
+                <div class="top-actions">
+                    <button id="soundToggleBtn" class="btn-circle-action" title="Toggle Suara">
+                        <span id="soundIcon">🔊</span>
+                    </button>
+                    <button id="trophyBtn" class="btn-circle-action" title="High Score">
+                        <span>🏆</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Main Title Header -->
+            <section class="title-header-section">
+                <h1 class="main-game-title">Clicker <span class="gold-text">Game</span></h1>
+                <p class="main-game-subtitle">Put your finger-clicking speed to the test!</p>
+            </section>
+
+            <!-- SCREEN 1: HALAMAN UTAMA -->
+            <section id="viewMainMenu" class="screen-view">
+                <div class="duration-select-box">
+                    <h2 class="section-subheading">Choose Game Duration</h2>
+                    <div class="duration-cards-grid" role="radiogroup">
+                        <button class="dur-card active" data-duration="10" role="radio" aria-checked="true">
+                            <span class="dur-val">10</span>
+                            <span class="dur-lbl">Seconds</span>
+                        </button>
+                        <button class="dur-card" data-duration="15" role="radio" aria-checked="false">
+                            <span class="dur-val">15</span>
+                            <span class="dur-lbl">Seconds</span>
+                        </button>
+                        <button class="dur-card" data-duration="30" role="radio" aria-checked="false">
+                            <span class="dur-val">30</span>
+                            <span class="dur-lbl">Seconds</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="start-action-row">
+                    <button id="startBtn" class="btn-navy-pill">
+                        <span class="play-triangle">►</span> Start Game
+                    </button>
+                </div>
+
+                <div class="feature-cards-grid">
+                    <div class="feature-card">
+                        <span class="feature-icon gold-lightning">⚡</span>
+                        <span class="feature-label"><strong>Test</strong> Your Speed</span>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon teal-chart">📊</span>
+                        <span class="feature-label"><strong>Beat</strong> Your Record</span>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon orange-heart">🧡</span>
+                        <span class="feature-label"><strong>Have</strong> Fun!</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SCREEN 2: COUNTDOWN SEBELUM MULAI -->
+            <section id="viewCountdown" class="screen-view hidden">
+                <div class="countdown-inner-card">
+                    <h3 class="countdown-card-title">Game starts in...</h3>
+                    
+                    <div class="countdown-ring-container">
+                        <div class="countdown-ring-inner">
+                            <span id="countdownNumber" class="countdown-big-digit">3</span>
+                        </div>
+                    </div>
+
+                    <p class="countdown-card-footer">Get ready!</p>
+                </div>
+            </section>
+
+            <!-- SCREEN 3: SAAT BERMAIN (GAMEPLAY) -->
+            <section id="viewGameplay" class="screen-view hidden">
+                <div class="gameplay-stats-card">
+                    <div class="gameplay-stat-item">
+                        <span class="stat-circle-icon">⏱️</span>
+                        <div class="stat-text-group">
+                            <span class="stat-lbl-small">Time Left</span>
+                            <span id="gameplayTimer" class="stat-val-bold">10s</span>
+                        </div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="gameplay-stat-item">
+                        <span class="stat-circle-icon">🖱️</span>
+                        <div class="stat-text-group">
+                            <span class="stat-lbl-small">Clicks</span>
+                            <span id="gameplayClicks" class="stat-val-bold">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="center-click-wrapper">
+                    <!-- Sunburst Ray Ticks Emitting from Circle -->
+                    <div class="sunburst-rays">
+                        <span class="ray ray-1"></span>
+                        <span class="ray ray-2"></span>
+                        <span class="ray ray-3"></span>
+                        <span class="ray ray-4"></span>
+                        <span class="ray ray-5"></span>
+                        <span class="ray ray-6"></span>
+                        <span class="ray ray-7"></span>
+                        <span class="ray ray-8"></span>
+                    </div>
+
+                    <button id="clickMeBtn" class="btn-click-me-circle">
+                        <span class="click-btn-label">CLICK<br>ME!</span>
+                    </button>
+                </div>
+
+                <div class="motivation-pill">
+                    <span class="motivation-text">Keep going! You can do it! 💪</span>
+                </div>
+            </section>
+
+            <!-- SCREEN 4: HASIL AKHIR (RESULT) -->
+            <section id="viewResult" class="screen-view hidden">
+                <!-- Confetti overlay -->
+                <div id="confettiContainer" class="confetti-container"></div>
+
+                <h2 id="resultHeadingTitle" class="result-title-main">Awesome!</h2>
+                <p id="resultHeadingSub" class="result-subtitle-main">You did great!</p>
+
+                <div class="result-summary-card">
+                    <div class="res-col">
+                        <span class="res-col-title">Total Clicks</span>
+                        <span id="resTotalClicks" class="res-col-val">0</span>
+                    </div>
+                    <div class="res-col-divider"></div>
+                    <div class="res-col">
+                        <span class="res-col-title">Clicks Per Second<br>(CPS)</span>
+                        <span id="resCps" class="res-col-val">0.00</span>
+                    </div>
+                    <div class="res-col-divider"></div>
+                    <div class="res-col">
+                        <span class="res-col-title">Duration</span>
+                        <span id="resDuration" class="res-col-val">30<br><small>Seconds</small></span>
+                    </div>
+                </div>
+
+                <div id="highScoreCard" class="high-score-banner-gold">
+                    <span class="hs-banner-icon">🏆</span>
+                    <div class="hs-banner-text">
+                        <span id="hsBadgeTitle" class="hs-title">New High Score!</span>
+                        <span id="hsCardValue" class="hs-val">0 clicks</span>
+                    </div>
+                </div>
+
+                <div class="result-actions-stack">
+                    <button id="playAgainBtn" class="btn-navy-pill">
+                        <span class="refresh-icon">⟳</span> Play Again
+                    </button>
+                    <button id="resetHsBtn" class="btn-light-pill">
+                        <span class="trash-icon">🗑️</span> Reset High Score
+                    </button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Hidden Audio Fallback -->
+    <audio id="clickAudioFallback" src="assets/click.wav" preload="auto"></audio>
+
+    <!-- Custom High Score Modal (Menggantikan Alert Bawaan Browser) -->
+    <div id="highScoreModal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="hsModalTitle">
+        <div class="modal-card">
+            <div class="modal-trophy-badge">🏆</div>
+            <h2 id="hsModalTitle" class="modal-title">High Scores Record</h2>
+            <p class="modal-subtitle">Rekor klik tertinggi yang pernah kamu capai:</p>
+            
+            <div class="hs-modal-grid">
+                <div class="hs-modal-item">
+                    <span class="hs-modal-dur">⏱️ 10 Seconds</span>
+                    <span id="hsModal10" class="hs-modal-val">0 clicks</span>
+                </div>
+                <div class="hs-modal-item">
+                    <span class="hs-modal-dur">⏱️ 15 Seconds</span>
+                    <span id="hsModal15" class="hs-modal-val">0 clicks</span>
+                </div>
+                <div class="hs-modal-item">
+                    <span class="hs-modal-dur">⏱️ 30 Seconds</span>
+                    <span id="hsModal30" class="hs-modal-val">0 clicks</span>
+                </div>
+            </div>
+
+            <div class="modal-actions-col">
+                <button id="closeHsModalBtn" class="btn-navy-pill">
+                    Tutup
+                </button>
+                <button id="modalResetHsBtn" class="btn-light-pill">
+                    🗑️ Reset All Scores
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+</html>
